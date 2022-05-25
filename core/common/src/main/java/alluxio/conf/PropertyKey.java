@@ -458,6 +458,7 @@ public final class PropertyKey implements Comparable<PropertyKey> {
     public Builder setDisplayType(DisplayType displayType) {
       mDisplayType = displayType;
       return this;
+
     }
 
     /**
@@ -1501,7 +1502,51 @@ public final class PropertyKey implements Comparable<PropertyKey> {
           .setConsistencyCheckLevel(ConsistencyCheckLevel.WARN)
           .setScope(Scope.SERVER)
           .build();
-
+  public static final PropertyKey UNDERFS_CUBEFS_MASTESR_ADDRESS =
+      stringBuilder(Name.UNDERFS_CUBEFS_MASTESR_ADDRESS)
+          .setDescription("Cubefs Master Address")
+          .setConsistencyCheckLevel(ConsistencyCheckLevel.WARN)
+          .setScope(Scope.SERVER)
+          .build();
+  public static final PropertyKey UNDERFS_CUBEFS_LOGGER_DIR =
+      stringBuilder(Name.UNDERFS_CUBEFS_LOGGER_DIR)
+          .setDefaultValue("/tmp/cfs-access.log/")
+          .setDescription("Cubefs logger dir.")
+          .setConsistencyCheckLevel(ConsistencyCheckLevel.WARN)
+          .setScope(Scope.SERVER)
+          .build();
+  public static final PropertyKey UNDERFS_CUBEFS_LOGGER_LEVEL =
+      stringBuilder(Name.UNDERFS_CUBEFS_LOGGER_LEVEL)
+          .setDescription("Cubefs logger level.")
+          .setConsistencyCheckLevel(ConsistencyCheckLevel.WARN)
+          .setScope(Scope.SERVER)
+          .build();
+  public static final PropertyKey UNDERFS_CUBEFS_ACCESS_KEY =
+      stringBuilder(Name.UNDERFS_CUBEFS_ACCESS_KEY)
+          .setDescription("Cubefs access key.")
+          .setConsistencyCheckLevel(ConsistencyCheckLevel.WARN)
+          .setScope(Scope.SERVER)
+          .build();
+  public static final PropertyKey UNDERFS_CUBEFS_SECRET_KEY =
+      stringBuilder(Name.UNDERFS_CUBEFS_SECRET_KEY)
+          .setDescription("Cubefs secret key.")
+          .setConsistencyCheckLevel(ConsistencyCheckLevel.WARN)
+          .setScope(Scope.SERVER)
+          .build();
+  public static final PropertyKey UNDERFS_CUBEFS_MIN_BUFFER_SIZE =
+      intBuilder(Name.UNDERFS_CUBEFS_MIN_BUFFER_SIZE)
+          .setDefaultValue(1 << 23)
+          .setDescription("Cubefs min write buffer size.")
+          .setConsistencyCheckLevel(ConsistencyCheckLevel.WARN)
+          .setScope(Scope.SERVER)
+          .build();
+  public static final PropertyKey UNDERFS_CUBEFS_MIN_READ_BUFFER_SIZE =
+      intBuilder(Name.UNDERFS_CUBEFS_MIN_READ_BUFFER_SIZE)
+          .setDefaultValue(128 << 10)
+          .setDescription("Cubefs min read buffer size.")
+          .setConsistencyCheckLevel(ConsistencyCheckLevel.WARN)
+          .setScope(Scope.SERVER)
+          .build();
   // UFS access control related properties
   //
   // Not prefixed with fs, the s3a property names mirror the aws-sdk property names for ease of use
@@ -6480,6 +6525,20 @@ public final class PropertyKey implements Comparable<PropertyKey> {
     public static final String UNDERFS_CEPHFS_LOCALIZE_READS =
         "alluxio.underfs.cephfs.localize.reads";
 
+    public static final String UNDERFS_CUBEFS_MASTESR_ADDRESS =
+            "alluxio.underfs.cubefs.master.address";
+    public static final String UNDERFS_CUBEFS_LOGGER_DIR =
+            "alluxio.underfs.cubefs.logger.dir";
+    public static final String UNDERFS_CUBEFS_LOGGER_LEVEL =
+            "alluxio.underfs.cubefs.logger.level";
+    public static final String UNDERFS_CUBEFS_ACCESS_KEY =
+            "alluxio.underfs.cubefs.access.key";
+    public static final String UNDERFS_CUBEFS_SECRET_KEY =
+            "alluxio.underfs.cubefs.secret.key";
+    public static final String UNDERFS_CUBEFS_MIN_BUFFER_SIZE =
+            "alluxio.underfs.cubefs.min.buffer.size";
+    public static final String UNDERFS_CUBEFS_MIN_READ_BUFFER_SIZE =
+            "alluxio.underfs.cubefs.min.read_buffer.size";
     //
     // UFS access control related properties
     //

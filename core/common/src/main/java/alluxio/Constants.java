@@ -66,6 +66,8 @@ public final class Constants {
   public static final String HEADER_CEPHFS_HADOOP = "ceph://";
   public static final String HEADER_COS = "cos://";
   public static final String HEADER_COSN = "cosn://";
+  public static final String HEADER_CUBEFS = "cubefs://";
+  public static final String HEADER_CUBEFS_HADOOP = "cfs://";
   // Google Cloud Storage header convention is "gs://".
   // See https://cloud.google.com/storage/docs/cloud-console
   public static final String HEADER_GCS = "gs://";
