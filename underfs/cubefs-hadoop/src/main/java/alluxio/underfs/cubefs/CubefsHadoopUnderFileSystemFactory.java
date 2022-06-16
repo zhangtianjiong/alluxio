@@ -1,16 +1,14 @@
 package alluxio.underfs.cubefs;
 
 import alluxio.Constants;
-import alluxio.underfs.UnderFileSystem;
 import alluxio.underfs.UnderFileSystemConfiguration;
-import alluxio.underfs.UnderFileSystemFactory;
+import alluxio.underfs.hdfs.HdfsUnderFileSystem;
 import alluxio.underfs.hdfs.HdfsUnderFileSystemFactory;
-import org.apache.hadoop.util.StringUtils;
 
 import javax.annotation.concurrent.ThreadSafe;
 
 /**
- * Factory for creating {@link alluxio.underfs.hdfs.HdfsUnderFileSystem}.
+ * Factory for creating {@link HdfsUnderFileSystem}
  * CubefsHadoopUnderFileSystem implement based on cubefs-hadoop interface.
  */
 @ThreadSafe
@@ -25,6 +23,6 @@ public class CubefsHadoopUnderFileSystemFactory extends HdfsUnderFileSystemFacto
 
     @Override
     public boolean supportsPath(String path, UnderFileSystemConfiguration conf) {
-        return supportsPath(path, conf);
+        return supportsPath(path);
     }
 }
